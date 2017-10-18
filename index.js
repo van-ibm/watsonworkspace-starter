@@ -5,7 +5,20 @@ const logger = require('winston')
 const ww = require('watsonworkspace-sdk')
 
 ww.logger.level = 'info'  // the watsonworkspace-sdk logger's level
-logger.level = 'verbose'  // this bot's logger level
+logger.level = 'info'  // this bot's logger level
+
+/*
+ * Webhook event examples:
+ * 'message-created'
+ * 'message-annotation-added'
+ * 'message-focus'
+ * 'message-focus:ActionRequest'
+ * 'message-focus:ActionRequest:Schedule'
+ * 'message-focus:Question'
+ * 'message-focus:Commitment'
+ * 'actionSelected'
+ * 'actionSelected:someActionId'
+ */
 
 bot.webhooks.on('message-annotation-added', (message, annotation) => {
   const annotationType = message.annotationType
