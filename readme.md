@@ -1,6 +1,8 @@
 # IBM Watson Workspace Starter Bot
 This is a sample Workspace bot that uses the [IBM Watson Workspace Bot Framework]() and [IBM Watson Workspace SDK](https://github.com/van-ibm/watsonworkspace-sdk).
 
+**UPDATE** The latest developer URL is [https://developer.watsonwork.ibm.com/apps](https://developer.watsonwork.ibm.com/apps).
+
 ## Quick Start
 
 [![Watch the video](https://img.youtube.com/vi/VGCfEi3gFhM/0.jpg)](https://youtu.be/VGCfEi3gFhM)
@@ -10,7 +12,7 @@ This is a sample Workspace bot that uses the [IBM Watson Workspace Bot Framework
 3. Create a `.env` file per the dotenv instructions in Local Development documentation.
 4. Run `npm run-script dev` from a command line.
 5. Copy the URL seen in the `Use 'https://cdf9d82f.ngrok.io' as your webhook URL in Watson Workspace` message for later use.
-6. Click the `Create new app` button on the [Developer Apps](https://workspace.ibm.com/developer/apps) page.
+6. Click the `Create new app` button on the [Developer Apps](https://developer.watsonwork.ibm.com/apps) page.
 7. Enter the `App Name` and the `Description of App`.
 8. Click `Create`.
 9. The next dialog will give you the App ID and App secret. You need to save these values to the respective environment variables in the `.env` file called `APP_ID` and `APP_SECRET`.
