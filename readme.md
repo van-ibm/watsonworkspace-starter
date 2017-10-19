@@ -3,6 +3,8 @@ This is a sample Workspace bot that uses the [IBM Watson Workspace Bot Framework
 
 ## Quick Start
 
+[![Watch the video](https://img.youtube.com/vi/VGCfEi3gFhM/0.jpg)](https://youtu.be/VGCfEi3gFhM)
+
 1. Open a command line (terminal) and change directory to the `workspace-starter` directory.
 2. Install dependencies by running `npm install`.
 3. Create a `.env` file per the dotenv instructions in Local Development documentation.
