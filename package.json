@@ -22,8 +22,8 @@
   },
   "dependencies": {
     "dotenv": "^4.0.0",
-    "watsonworkspace-bot": "^0.0.1",
-    "watsonworkspace-sdk": "^0.0.1",
+    "watsonworkspace-bot": "~0.0.1",
+    "watsonworkspace-sdk": "~0.0.1",
     "winston": "^2.4.0"
   }
 }
