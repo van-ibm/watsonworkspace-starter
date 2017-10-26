@@ -1,6 +1,6 @@
 {
   "name": "watsonworkspace-starter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An IBM Watson Workspace starter bot",
   "main": "index.js",
   "scripts": {
@@ -22,8 +22,8 @@
   },
   "dependencies": {
     "dotenv": "^4.0.0",
-    "watsonworkspace-bot": "~0.0.3",
-    "watsonworkspace-sdk": "~0.0.3",
+    "watsonworkspace-bot": "^1.0.0",
+    "watsonworkspace-sdk": "^1.0.0",
     "winston": "^2.4.0"
   }
 }

@@ -1,11 +1,16 @@
 'use strict'
 
-const bot = require('watsonworkspace-bot')
 const logger = require('winston')
-const ww = require('watsonworkspace-sdk')
 
-ww.logger.level = 'info'  // the watsonworkspace-sdk logger's level
-logger.level = 'info'  // this bot's logger level
+// creates a bot server with a single bot
+const botFramework = require('watsonworkspace-bot')
+botFramework.level('info')
+botFramework.startServer()
+
+const bot = botFramework.create() // bot settings defined by process.env
+bot.authenticate()
+
+const UI = require('watsonworkspace-sdk').UI
 
 /*
  * Webhook event examples:
@@ -20,7 +25,7 @@ logger.level = 'info'  // this bot's logger level
  * 'actionSelected:someActionId'
  */
 
-bot.webhooks.on('message-annotation-added', (message, annotation) => {
+bot.on('message-annotation-added', (message, annotation) => {
   const annotationType = message.annotationType
 
   logger.info(`Received message-annotation-added:${annotationType}`)
@@ -28,14 +33,14 @@ bot.webhooks.on('message-annotation-added', (message, annotation) => {
   logger.debug(annotation)
 
   // fetch the full message with content using the watsonworkspace-sdk
-  ww.getMessage(message.messageId, ['id', 'content', 'annotations'])
+  bot.getMessage(message.messageId, ['id', 'content', 'annotations'])
   .then(message => {
     // do something awesome
   })
   .catch(error => logger.error(error))
 })
 
-bot.webhooks.on(`actionSelected`, (message, annotation) => {
+bot.on(`actionSelected`, (message, annotation) => {
   // get the original message that created this actionSelected annotation
   const referralMessageId = annotation.referralMessageId
   const userId = message.userId
@@ -46,15 +51,12 @@ bot.webhooks.on(`actionSelected`, (message, annotation) => {
   logger.debug(annotation)
 
   let buttons = [
-    ww.ui.button('submit-action', 'Submit'),
-    ww.ui.button('cancel-action', 'Cancel')
+    UI.button('submit-action', 'Submit'),
+    UI.button('cancel-action', 'Cancel')
   ]
 
-  const dialog = ww.ui.generic('This is Action Fulfillment.', 'In action ...', buttons)
+  const dialog = UI.generic('This is Action Fulfillment.', 'In action ...', buttons)
 
   // create the action fulfillment dialog in Workspace
-  ww.sendTargetedMessage(userId, annotation, dialog)
+  bot.sendTargetedMessage(userId, annotation, dialog)
 })
-
-// the most important part - start the bot so it listens for Workspace events
-bot.start()
