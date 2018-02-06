@@ -10,6 +10,9 @@ ngrok.connect({
   if (err) {
     console.log(`Error creating ngrok ${err}`)
   } else {
-    console.log(`Use '${url}/${process.env.APP_ID}' as your webhook URL in Watson Workspace`)
+    console.log(`
+    1. Open https://developer.watsonwork.ibm.com/apps/${process.env.APP_ID}/info 
+    2. Add the webhook ${url}/${process.env.APP_ID} to you App
+    `)
   }
 })
