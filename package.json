@@ -1,12 +1,12 @@
 {
   "name": "watsonworkspace-starter",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "An IBM Watson Workspace starter bot",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "test": "jasmine",
-    "dev": "concurrently \"node ngrok.js\" \"nodemon --debug ./index.js\""
+    "dev": "concurrently \"node ./node_modules/watsonworkspace-ngrok/index.js\" \"nodemon --debug ./index.js\""
   },
   "keywords": [
     "watsonworkspace",
@@ -17,13 +17,13 @@
   "license": "Apache-2.0",
   "devDependencies": {
     "concurrently": "^3.5.0",
-    "ngrok": "^2.2.23",
-    "nodemon": "^1.12.1"
+    "nodemon": "^1.12.1",
+    "watsonworkspace-ngrok": "^1.0.0"
   },
   "dependencies": {
     "dotenv": "^4.0.0",
-    "watsonworkspace-bot": "^1.0.0",
-    "watsonworkspace-sdk": "^1.0.0",
+    "watsonworkspace-bot": "^2.0.0",
+    "watsonworkspace-sdk": "^2.0.0",
     "winston": "^2.4.0"
   }
 }
