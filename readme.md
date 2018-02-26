@@ -22,5 +22,5 @@ This is a sample Workspace bot that uses the [IBM Watson Workspace Bot Framework
 14. Copy the `Webhook secret` from the resulting dialog to the `WEBHOOK_SECRET` property in the `.env` file.
 15. Make a change to `index.js` and save. This causes the chatbot to restart and load the updated `.env` file.
 16. Back in you browser, select the `Enable` button to complete the process.
-17. Follow the instructions in [Share App](https://workspace.ibm.com/developer/apps/dashboard/share) to add the app to a space.
+17. Follow the instructions in [Share App](https://developer.watsonwork.ibm.com/apps/dashboard/share) to add the app to a space.
 18. Go write some code!
