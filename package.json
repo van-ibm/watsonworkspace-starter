@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "test": "jasmine",
-    "dev": "concurrently \"node ./node_modules/watsonworkspace-ngrok/index.js\" \"nodemon --debug ./index.js\""
+    "dev": "concurrently \"node ./node_modules/watsonworkspace-ngrok/index.js\" \"nodemon --inspect ./index.js\""
   },
   "keywords": [
     "watsonworkspace",
